@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { ArrowRight, GitHub, Linkedin, Twitter } from 'react-feather';
 import { fadeInUp } from './SharedComponents';
 
@@ -29,7 +30,7 @@ export const HeroSection = ({
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50/80 to-white dark:from-gray-900/80 dark:to-black" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(37,99,235,0.05),transparent)] dark:bg-[radial-gradient(circle_at_30%_30%,rgba(37,99,235,0.05),transparent)]" />
-      
+
       <div className="max-w-7xl mx-auto w-full relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content Side */}
@@ -41,10 +42,13 @@ export const HeroSection = ({
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight"
               >
-                Building Digital <br />
-                <span className="text-accent-primary dark:text-accent-lightBlue">Experiences</span> that<br />
-                Make a Difference
+               
+                <span className="text-accent-primary dark:text-accent-lightBlue mr-2">
+                  Building Impactful Products  
+                </span> 
+                 with AI & Community.
               </motion.h1>
+
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -104,49 +108,85 @@ export const HeroSection = ({
             </div>
           </div>
 
-          {/* Image Side */}
+          {/* Image Grid */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative grid grid-cols-2 gap-4 p-4 order-1 lg:order-2"
+            className="relative w-full max-w-2xl mx-auto lg:mx-0 order-1 lg:order-2"
           >
-            <div className="space-y-4">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden transform translate-y-8">
-                <img
-                  src={`https://placehold.co/400x500/${placeholderBg}/${placeholderAccent}.${placeholderFormat}?text=1`}
-                  alt="Portfolio Image 1"
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-                />
+            <div className="grid grid-cols-2 gap-4 md:gap-6 p-4">
+              {/* First Column */}
+              <div className="space-y-4 md:space-y-6">
+                <motion.div
+                  className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg transform translate-y-4"
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Image
+                    src="/images/one.jpg"
+                    alt="Portfolio Image 1"
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                </motion.div>
+                <motion.div
+                  className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg"
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Image
+                    src="/images/two.jpg"
+                    alt="Portfolio Image 2"
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                </motion.div>
               </div>
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img
-                  src={`https://placehold.co/400x300/${placeholderBg}/${placeholderAccent}.${placeholderFormat}?text=2`}
-                  alt="Portfolio Image 2"
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
-            <div className="space-y-4 transform translate-y-16">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img
-                  src={`https://placehold.co/400x300/${placeholderBg}/${placeholderAccent}.${placeholderFormat}?text=3`}
-                  alt="Portfolio Image 3"
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden">
-                <img
-                  src={`https://placehold.co/400x500/${placeholderBg}/${placeholderAccent}.${placeholderFormat}?text=4`}
-                  alt="Portfolio Image 4"
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-                />
+
+              {/* Second Column */}
+              <div className="space-y-4 md:space-y-6 transform translate-y-10">
+                <motion.div
+                  className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg"
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Image
+                    src="/images/three.png"
+                    alt="Portfolio Image 3"
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                </motion.div>
+                <motion.div
+                  className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg"
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Image
+                    src="/images/four.jpg"
+                    alt="Portfolio Image 4"
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                </motion.div>
               </div>
             </div>
 
-            {/* Decorative Elements */}
-            <div className="absolute -inset-4 bg-gradient-to-br from-accent-primary/5 to-transparent rounded-3xl -z-10" />
-            <div className="absolute -inset-4 bg-[radial-gradient(circle_at_70%_70%,rgba(37,99,235,0.1),transparent)] rounded-3xl -z-10" />
+            {/* Decorative Background Elements */}
+            <div className="absolute -inset-4 -z-10">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/10 to-transparent rounded-3xl" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(37,99,235,0.15),transparent)] rounded-3xl" />
+              <div className="absolute inset-0 bg-grid-pattern opacity-[0.075]" />
+            </div>
           </motion.div>
         </div>
       </div>

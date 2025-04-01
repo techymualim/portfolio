@@ -61,11 +61,11 @@ const PortfolioWebsite = () => {
   const userRole = 'Product Software Engineer';
   const userFocus = 'React / Django / AI';
   const userBio =
-    'Positioned at the confluence of meaningful design and engineering solutions. Focused on creating impact with React, Django, and AI-driven features.';
-  const userEmail = 'your.email@example.com'; // <-- REPLACE
+    'At the intersection of design, engineering, and community, crafting impactful solutions with React, Django, and AI-driven technologies to push the boundaries of innovation and empower the next generation of builders.';
+  const userEmail = 'syedhassam2001@gmail.com'; // <-- REPLACE
   const userLocation = 'Karachi, Pakistan';
-  const GitHubUrl = 'https://GitHub.com/yourusername'; // <-- REPLACE
-  const linkedinUrl = 'https://linkedin.com/in/yourusername'; // <-- REPLACE
+  const GitHubUrl = 'https://GitHub.com/techymualim'; // <-- REPLACE
+  const linkedinUrl = 'https://www.linkedin.com/in/hassam-jawed/'; // <-- REPLACE
   const twitterUrl = ''; // Optional: Replace or leave empty
   const resumeUrl = '#'; // <-- REPLACE with link to your CV/Resume PDF
 
@@ -103,28 +103,32 @@ const PortfolioWebsite = () => {
   // Projects
   const projects = [
     {
-      title: 'AI-Powered Admin Dashboard',
+      title: 'Relocal',
+      description:
+        'Led the engineering for the startup Relocal, a platform for local businesses a software platform to automate and streamline VISA, immigration and relocation to ease global hiring for companies',
+      tags: ['Electron', 'JavaScript', 'Refactoring'],
+      imageUrl: `images/relocal.png`,
+      liveUrl: 'https://www.relocal.co/',
+      // codeUrl: '#',
+    },
+    {
+      title: 'Django Admin Dashboard',
       description:
         'Django Admin dashboard enhanced with AI features for data analysis and user management.',
       tags: ['Django Admin', 'AI', 'Python', 'Productivity'],
-      imageUrl: `https://placehold.co/600x350/${placeholderBg}/${placeholderAccent}.${placeholderFormat}?text=AI+Admin`,
-      codeUrl: '#',
+      imageUrl: `images/dash.png`,
+
+      // codeUrl: '#',
     },
-    {
-      title: 'Electron App Feature Refactor',
-      description:
-        'Refactored and improved core features for a cross-platform Electron application.',
-      tags: ['Electron', 'JavaScript', 'Refactoring'],
-      imageUrl: `https://placehold.co/600x350/${placeholderBg}/${placeholderAccent}.${placeholderFormat}?text=Electron+App`,
-      codeUrl: '#',
-    },
+
     {
       title: 'Raabtaa Landing Page & Dashboard',
       description:
-        'Designed and developed landing page and data dashboard for Raabtaa Tech.',
+        'Designed and developed branding, landing page and data dashboard for Raabtaa Tech.',
       tags: ['React', 'UI/UX', 'Figma', 'Data Viz'],
-      imageUrl: `https://placehold.co/600x350/${placeholderBg}/${placeholderAccent}.${placeholderFormat}?text=Raabtaa+Dash`,
-      liveUrl: '#',
+      imageUrl: `images/raabtaa.jpg`,
+
+      // liveUrl: '#',
     },
   ];
 
@@ -133,9 +137,9 @@ const PortfolioWebsite = () => {
     {
       title: 'Organizer, GDG Kolachi',
       description:
-        'Organizing Developer Baithaks, Devfest, I/O Extended, Build with AI workshops, impacting hundreds of developers.',
-      date: 'Nov 2021 - Pres',
-      icon: Award,
+        'Organizing Developer Baithaks, Devfest, I/O Extended, Build with AI workshops, impacting hundreds of developers in Karachi.',
+      date: 'Nov 2021 - Present',
+      logoUrl: '/images/gdg.png',
       tags: ['Leadership', 'Event Management', 'Google Tech', 'AI/ML'],
     },
     {
@@ -143,7 +147,7 @@ const PortfolioWebsite = () => {
       description:
         'Led the Google Developer Student Club, organized workshops, talks, and mentored students.',
       date: 'Aug 2021 - Jul 2022',
-      icon: Users,
+      logoUrl: '/images/gdsc.png',
       tags: ['Leadership', 'Mentorship', 'University'],
     },
     {
@@ -151,7 +155,7 @@ const PortfolioWebsite = () => {
       description:
         'Led design for Flutter Extended Karachi 2023 (featured at Flutter Connect) & Flutter Flash 2022.',
       date: 'Oct 2022',
-      icon: Edit3,
+      logoUrl: '/images/fkhi.jpg',
       tags: ['Design', 'Flutter', 'Events'],
     },
   ];
@@ -165,7 +169,8 @@ const PortfolioWebsite = () => {
       description:
         'Designing Postgres schemas, refactoring Electron app features, building Django Admin dashboards, working with AWS (EC2, S3, RDS) & Docker.',
       tags: ['Django', 'PostgreSQL', 'Electron', 'JavaScript', 'AWS', 'Docker'],
-      logoUrl: `https://placehold.co/80x80/${placeholderBg}/${placeholderTextCol}.${placeholderFormat}?text=VL`,
+      logoUrl: `/images/vertika.jpg
+      `,
     },
     {
       role: 'Investment & Expansion Analyst',
@@ -174,7 +179,7 @@ const PortfolioWebsite = () => {
       description:
         'Created pitch decks, managed CRM data migration (using Python script).',
       tags: ['Pitch Decks', 'CRM', 'Python', 'Data Migration'],
-      logoUrl: `https://placehold.co/80x80/${placeholderBg}/${placeholderTextCol}.${placeholderFormat}?text=IM`,
+      logoUrl: `/images/iman.jpg`,
     },
     {
       role: 'Software Trainee / Intern',
@@ -183,7 +188,7 @@ const PortfolioWebsite = () => {
       description:
         'Designed & developed dashboards (Figma, React, Chart.js), database querying, UI/UX improvements, built landing page.',
       tags: ['React', 'UI/UX', 'Figma', 'Data Viz', 'SQL'],
-      logoUrl: `https://placehold.co/80x80/${placeholderBg}/${placeholderTextCol}.${placeholderFormat}?text=RT`,
+      logoUrl: `/images/raabtaa.jpg`,
     },
   ];
 
@@ -214,7 +219,10 @@ const PortfolioWebsite = () => {
           skills={skills}
           theme={theme}
         />
-
+        <CommunitySection
+          community={community}
+          theme={theme}
+        />
         <ExperienceSection
           experiences={experiences}
           theme={theme}
@@ -230,10 +238,7 @@ const PortfolioWebsite = () => {
           theme={theme}
         />
 
-        <CommunitySection
-          community={community}
-          theme={theme}
-        />
+
 
         <ContactSection
           userEmail={userEmail}

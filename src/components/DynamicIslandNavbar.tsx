@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import {
   Home,
   Layers,
@@ -100,14 +101,19 @@ const DynamicIslandNavbar = ({ theme, setTheme, userName }: DynamicIslandNavbarP
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", stiffness: 200, damping: 20 }}
-          className="relative"
+          className="relative flex-shrink-0"
         >
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent-primary/20 to-accent-primary/10 absolute -inset-1 blur-md" />
-          <img
-            src={`https://placehold.co/32x32`}
-            alt={userName}
-            className="w-8 h-8 rounded-full relative border-2 border-white dark:border-gray-800 shadow-xl"
-          />
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent-primary/20 to-accent-primary/10 absolute -inset-1 blur-md" />
+          <div className="relative w-10 h-10 rounded-full border-2 border-white dark:border-gray-800 shadow-xl overflow-hidden">
+            <Image
+              src="/images/prof.png"
+              alt={userName}
+              fill
+              className="object-cover"
+              sizes="40px"
+              priority
+            />
+          </div>
         </motion.div>
 
         {/* Navigation Items */}

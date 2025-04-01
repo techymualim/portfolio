@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { SectionTitle, GlassCard, staggerContainer, fadeInUp } from './SharedComponents';
 import { CommunityItem } from './types';
 
@@ -35,9 +36,14 @@ export const CommunitySection = ({ community, theme }: CommunitySectionProps) =>
                 className="bg-gray-100 dark:bg-black/10 p-2.5 rounded-lg border border-gray-200 dark:border-white/10 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform"
                 whileHover={{ rotate: -5 }}
               >
-                {item.icon && (
-                  <item.icon className="w-5 h-5 text-accent-primary dark:text-accent-lightBlue" />
-                )}
+                <div className="relative w-8 h-8">
+                  <Image
+                    src={item.logoUrl}
+                    alt={`${item.title} logo`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </motion.div>
               <div className="flex-grow">
                 <h3 className="text-base font-semibold text-gray-800 dark:text-white mb-1">

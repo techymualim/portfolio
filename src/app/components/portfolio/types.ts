@@ -42,7 +42,7 @@ export interface CommunityItem {
   title: string;
   description: string;
   date: string;
-  icon: any;
+  logoUrl: string;
   tags: string[];
 }
 
